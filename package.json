@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.9.1",
+    "emailjs-com": "^2.6.4",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {

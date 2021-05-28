@@ -22,6 +22,8 @@ import Portfolio from "~/components/web/PortfolioSec.vue";
 import Contact from "~/components/web/ContactUsSec.vue";
 import Footer from "~/components/web/Footer.vue";
 export default {
+  middleware: "switch",
+
   components: {
     Home,
     Service,

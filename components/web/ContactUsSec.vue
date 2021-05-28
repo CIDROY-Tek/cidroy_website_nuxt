@@ -100,6 +100,7 @@
                 <v-text-field
                   filled
                   label="Name"
+                  v-model="name"
                   color="red"
                   append-icon="mdi-account"
                 ></v-text-field>
@@ -108,14 +109,25 @@
                 <v-text-field
                   filled
                   label="Number"
+                  v-model="number"
                   color="red"
                   append-icon="mdi-phone"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="8">
+                <v-text-field
+                  filled
+                  label="Email"
+                  v-model="email"
+                  color="red"
+                  append-icon="mdi-mail"
                 ></v-text-field>
               </v-col>
               <v-col cols="12" sm="8">
                 <v-textarea
                   filled
                   label="How Can I Help You"
+                  v-model="message"
                   color="red"
                   append-icon="mdi-message"
                 ></v-textarea>
@@ -129,20 +141,33 @@
                 ></v-text-field>
               </v-col> -->
               <v-col cols="12" sm="8">
-                <v-btn large dark color="red"> Send</v-btn>
+                <v-btn large dark color="red" @click="sendMail"> Send</v-btn>
               </v-col>
             </v-col>
           </v-row>
         </v-col>
       </div>
     </v-row>
+    <v-snackbar
+      v-model="snackbar"
+      timeout="3000"
+      right
+      top
+      :color="snackbar_color"
+    >
+      {{ snackbar_text }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn text v-bind="attrs" @click="snackbar = false"> Okay </v-btn>
+      </template>
+    </v-snackbar>
   </section>
 </template>
 
 <style scoped>
 .contactBG {
   width: 80%;
-  height: 1200px;
+  height: 1250px;
   background: #ffffff;
   box-shadow: 0px 29px 0px -14px #ea2e49, 0px 52px 0px -24px #a9162b,
     0px 0px 50px -1px rgba(82, 82, 82, 0.1);
@@ -154,3 +179,60 @@
   background-color: red;
 }
 </style>
+
+<script>
+import emailjs from "emailjs-com";
+export default {
+  data: () => ({
+    name: null,
+    number: null,
+    email: null,
+    message: null,
+    snackbar: false,
+    snackbar_text: "",
+    snackbar_color: "success",
+  }),
+  mounted: function () {
+    emailjs.init("user_de49AgyRcXIpyR1vMeVbF"); //Insert your User ID
+  },
+  methods: {
+    async sendMail() {
+      let templateParams = {
+        req_name: this.name,
+        req_number: this.number,
+        req_email: this.email,
+        req_message: this.message,
+      };
+      try {
+        var mailResponse = await emailjs.send(
+          "service_a459dac",
+          "template_mrt3yr2",
+          templateParams
+        ); //use your Service ID and Template ID
+
+        if (mailResponse.status == 200) {
+          console.log("SUCCESS BUT TRIP")
+          console.log("SUCCESS!", mailResponse.status, mailResponse.text);
+          this.name = null;
+          this.number = null;
+          this.email = null;
+          this.message = null;
+          this.snackbar_text = "Message Sent Successfuly";
+          this.snackbar_color = "success";
+          this.snackbar = true;
+        } else {
+          console.log("FAILED...", mailResponse);
+          this.snackbar_text = "Oops!!! Something went Wrong! \n Please Try Again Later!";
+          this.snackbar_color = "danger";
+          this.snackbar = true;
+        }
+      } catch (err) {
+        console.log("MAIL SERVER FAILED...", err);
+        this.snackbar_text = "Oops!!! Our Mail Servers seem down!";
+        this.snackbar_color = "danger";
+        this.snackbar = true;
+      }
+    },
+  },
+};
+</script>
