@@ -1,19 +1,25 @@
 <template>
   <section id="service">
     <v-row align="center" justify="center">
-      <h3
-        class="display-2 font-weight-bold black--text px-5"
-        style="margin-top: 200px"
+      <v-col cols="12" align="center">
+        <h3
+          class="display-2 font-weight-bold black--text px-5"
+          style="margin-top: 200px"
+        >
+          Services we provide to create strong business
+        </h3></v-col
       >
-        Services we provide to create strong business
-      </h3>
-      <v-slide-group v-model="model" class="pa-4 mt-10" show-arrows>
-        <v-slide-item v-for="(n, index) in servicesList" :key="`n-${index}`">
-          <v-hover v-slot="{ hover }">
+      <v-col cols="12" align="center" class="mt-10">
+        <v-row style="width:70%;" class="justify-space-around">
+          <v-hover
+            v-slot="{ hover }"
+            v-for="(n, index) in servicesList"
+            :key="`n-${index}`"
+          >
             <v-card
               class="ma-5"
               rounded
-              elevation="12"
+              elevation="5"
               width="275px"
               height="250px"
               :color="hover ? '#1C344C' : 'white'"
@@ -33,41 +39,19 @@
                     height="75"
                     :src="hover ? n.img_d : n.img_w" /></v-col
               ></v-row>
-            </v-card>
-          </v-hover>
-        </v-slide-item>
-
-        <template v-slot:prev="{ on, attrs }">
-          <v-btn
-            fab
-            icon
-            color="red"
-            v-bind="attrs"
-            v-on="on"
-            style="position: absolute; top: 350px; left: 75px"
+            </v-card> </v-hover
+        ></v-row>
+      </v-col>
+      <v-row>
+        <v-col cols="12" align="center">
+          <h3
+            class="display-2 font-weight-bold black--text px-5"
+            style="margin-top: 200px"
           >
-            <v-icon>mdi-arrow-left</v-icon></v-btn
-          >
-        </template>
-        <template v-slot:next="{ on, attrs }">
-          <v-btn
-            fab
-            icon
-            color="red"
-            v-bind="attrs"
-            v-on="on"
-            style="position: absolute; top: 350px; left: 125px"
-          >
-            <v-icon>mdi-arrow-right</v-icon></v-btn
-          >
-        </template>
-      </v-slide-group>
-      <h3
-        class="display-2 font-weight-bold black--text px-5"
-        style="margin-top: 200px;"
+            Our Technological Stacks
+          </h3></v-col
+        ></v-row
       >
-        Our Technological Stacks
-      </h3>
       <div class="sepLine my-15" />
       <v-row class="align-center ml-15">
         <v-col

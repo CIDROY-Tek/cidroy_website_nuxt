@@ -9,22 +9,20 @@
         to create strong <br />
         business
       </h1>
-      <v-slide-group
-        v-model="model"
-        class="mt-15"
-        center-active
-        show-arrows
-        mobile-breakpoint="100"
-      >
-        <v-slide-item v-for="(n, index) in servicesList" :key="`n-${index}`">
+      <v-slide-group v-model="model" class="mt-15" center-active show-arrows>
+        <v-slide-item
+          v-for="(n, index) in servicesList"
+          :key="`n-${index}`"
+        >
           <v-hover v-slot="{ hover }">
             <v-card
               class="ma-5"
               rounded
-              elevation="12"
+              elevation="2"
               width="275px"
               height="250px"
               :color="hover ? '#1C344C' : 'white'"
+              style="box-shadow: 10px 10px 50px 3px rgba(39, 92, 141, 0.1);"
             >
               <v-card-title
                 class="justify-center"
@@ -49,9 +47,10 @@
           <v-btn
             fab
             icon
-            color="red"
+            :color="current_Card == 0 ? 'grey' : 'red'"
             v-bind="attrs"
             v-on="on"
+            @click="setIcon_Prev"
             style="position: absolute; top: 325px; left: 75px"
           >
             <v-icon>mdi-arrow-left</v-icon></v-btn
@@ -61,9 +60,10 @@
           <v-btn
             fab
             icon
-            color="red"
+            :color="current_Card == 2 ? 'grey' : 'red'"
             v-bind="attrs"
             v-on="on"
+            @click="setIcon_Next"
             style="position: absolute; top: 325px; left: 150px"
           >
             <v-icon>mdi-arrow-right</v-icon></v-btn
@@ -72,12 +72,12 @@
       </v-slide-group>
       <h3
         class="display-1 font-weight-bold text-center black--text px-5"
-        style="margin-top: 200px; margin-bottom: 50px;"
+        style="margin-top: 200px; margin-bottom: 50px"
       >
         Our Technological Stacks
       </h3>
       <div class="sepLine my-5" />
-      <v-row class="align-center mx-3">
+      <v-row class="align-center mx-3 px-5">
         <v-col
           cols="4"
           v-for="(n, index) in imageList"
@@ -95,6 +95,7 @@
 export default {
   data: () => ({
     model: null,
+    current_Card: 0,
     imageList: [
       { link: "/stack_1.png" },
       { link: "/stack_2.jpg" },
@@ -138,5 +139,45 @@ export default {
       },
     ],
   }),
+  methods: {
+    setIcon_Next() {
+      // this.current_Card = this.cycle[this.current_Card]
+
+      switch (this.current_Card) {
+        case 0:
+          this.current_Card = 1;
+          break;
+
+        case 1:
+          this.current_Card = 2;
+          break;
+
+        case 2:
+          this.current_Card = 0;
+          break;
+
+        default:
+          break;
+      }
+    },
+    setIcon_Prev() {
+      switch (this.current_Card) {
+        case 0:
+          this.current_Card = 2;
+          break;
+
+        case 1:
+          this.current_Card = 0;
+          break;
+
+        case 2:
+          this.current_Card = 1;
+          break;
+
+        default:
+          break;
+      }
+    },
+  },
 };
 </script>

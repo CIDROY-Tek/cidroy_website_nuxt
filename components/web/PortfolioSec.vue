@@ -53,54 +53,32 @@
       </template>
     </v-slide-group> -->
     <div class="sepLine my-5" />
-    <div id="container">
-      <div class="photobanner row">
+    <div>
+      <VueSlickCarousel
+        :arrows="false"
+        :dots="false"
+        :infinite="true"
+        :slidesToShow="4"
+        :slidesToScroll="1"
+        :autoplay="true"
+        :speed="2000"
+        :autoplaySpeed="2000"
+      >
         <v-img
-          width="100"
-          height="100"
+          width="250"
+          height="250"
           contain
           class="mx-10"
           v-for="(n, index) in imageList"
           :key="`n-${index}`"
           :src="n.link"
         />
-      </div>
+      </VueSlickCarousel>
     </div>
     <div class="sepLine my-5" />
   </section>
 </template>
 <style scoped>
-#container {
-  height: 100px;
-  position: relative;
-  overflow: hidden;
-}
-.photobanner {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: bannermove 8s linear infinite;
-}
-
-.photobanner:hover {
-  animation-play-state: paused;
-}
-
-.photobanner img {
-  margin: 0 0.5em;
-}
-
-@keyframes bannermove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-50%, 0);
-  }
-}
-
 .sepLine {
   width: 100%;
   height: 2px;
@@ -114,7 +92,12 @@
 }
 </style>
 <script>
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
 export default {
+  components: { VueSlickCarousel },
   data: () => ({
     model: null,
     imageList: [
@@ -129,33 +112,27 @@ export default {
     servicesList: [
       {
         header: "Design Innovation",
-        text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
       },
       {
         header: "Business Process Management",
-        text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
       },
       {
         header: "MVP Development",
-        text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
       },
       {
         header: "Design Innovation",
-        text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
       },
       {
         header: "Business Process Management",
-        text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
       },
       {
         header: "MVP Development",
-        text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat, viverra magna risus. ",
       },
     ],
   }),

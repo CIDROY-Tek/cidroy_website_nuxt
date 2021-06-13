@@ -1,5 +1,5 @@
 <template>
-  <section id="mabout">
+  <section id="mabout" v-intersect="onIntersect">
     <v-row justify="center">
       <div class="about mx-5" style="margin-top: 100px">
         <div>
@@ -29,9 +29,15 @@
               <v-row class="mt-15">
                 <v-col cols="12" sm="3"
                   ><h2
-                    class="text-center display-1 font-weight-bold my-2 black--text"
+                    class="
+                      text-center
+                      display-1
+                      font-weight-bold
+                      my-2
+                      black--text
+                    "
                   >
-                    3 Countries
+                    {{ countryCount }} Countries
                   </h2>
                   <h4
                     class="text-center headline font-weight-light black--text"
@@ -42,9 +48,15 @@
                 >
                 <v-col cols="12" sm="3"
                   ><h2
-                    class="text-center display-1 font-weight-bold my-2 black--text"
+                    class="
+                      text-center
+                      display-1
+                      font-weight-bold
+                      my-2
+                      black--text
+                    "
                   >
-                    20+
+                    {{ projectCount }}+
                   </h2>
                   <h4
                     class="text-center headline font-weight-light black--text"
@@ -54,9 +66,15 @@
                 >
                 <v-col cols="12" sm="3"
                   ><h2
-                    class="text-center display-1 font-weight-bold my-2 black--text"
+                    class="
+                      text-center
+                      display-1
+                      font-weight-bold
+                      my-2
+                      black--text
+                    "
                   >
-                    20+
+                    {{ consultantCount }}+
                   </h2>
                   <h4
                     class="text-center headline font-weight-light black--text"
@@ -67,9 +85,15 @@
                 >
                 <v-col cols="12" sm="3"
                   ><h2
-                    class="text-center display-1 font-weight-bold my-2 black--text"
+                    class="
+                      text-center
+                      display-1
+                      font-weight-bold
+                      my-2
+                      black--text
+                    "
                   >
-                    20+
+                    {{ clientCount }}+
                   </h2>
                   <h4
                     class="text-center headline font-weight-light black--text"
@@ -95,3 +119,65 @@
   height: 700px;
 }
 </style>
+
+
+
+<script>
+export default {
+  data: () => ({
+    countryCount: 0,
+    projectCount: 0,
+    consultantCount: 0,
+    clientCount: 0,
+    startCount: false,
+  }),
+  mounted: function () {
+    // this.setProjectCount();
+  },
+  methods: {
+    onIntersect(entries, observer) {
+      // More information about these options
+      // is located here: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+      console.log("ENTERIES", entries);
+      if (entries[0].isIntersecting) {
+        console.log("AYA BC")
+        this.setHover();
+        this.startCount = true;
+      }
+    },
+    setHover() {
+      if (this.startCount == false) {
+        this.setCountries();
+        this.setProjectCount();
+        this.setConsultant();
+        this.setClient();
+        this.startCount = true;
+      }
+    },
+    setCountries() {
+      this.countryCount = this.countryCount + 1;
+      if (this.countryCount < 3) {
+        setTimeout(this.setCountries, 200);
+      }
+    },
+    setProjectCount() {
+      this.projectCount = this.projectCount + 1;
+      if (this.projectCount < 20) {
+        setTimeout(this.setProjectCount, 150);
+      }
+    },
+    setConsultant() {
+      this.consultantCount = this.consultantCount + 1;
+      if (this.consultantCount < 15) {
+        setTimeout(this.setConsultant, 150);
+      }
+    },
+    setClient() {
+      this.clientCount = this.clientCount + 1;
+      if (this.clientCount < 10) {
+        setTimeout(this.setClient, 150);
+      }
+    },
+  },
+};
+</script>

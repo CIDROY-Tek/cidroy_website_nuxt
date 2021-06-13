@@ -56,7 +56,7 @@
           <v-btn
             large
             dark
-            @click="$vuetify.goTo('#contact')"
+            @click="$vuetify.goTo('#mcontact')"
             class="mt-2 red--text"
             color="white"
           >

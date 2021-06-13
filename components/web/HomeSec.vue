@@ -39,7 +39,7 @@
       >
         Contact
       </v-btn>
-      <v-btn color="#EA2E49" class="text-capitalize mt-2"> Get in Touch </v-btn>
+      <v-btn color="#EA2E49" class="text-capitalize mt-2"  @click="$vuetify.goTo('#contact')" > Get in Touch </v-btn>
     </v-app-bar>
     <!-- ------------------------ HOME PAGE ------------------------ -->
     <section id="hero">

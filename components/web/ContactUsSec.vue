@@ -28,14 +28,26 @@
                 <v-col cols="8">
                   <v-row justify="start">
                     <h1
-                      class="title font-weight-light black--text text-center mx-5"
+                      class="
+                        title
+                        font-weight-light
+                        black--text
+                        text-center
+                        mx-5
+                      "
                     >
                       Nishant Singh
                     </h1>
                   </v-row>
                   <v-row justify="start">
                     <h1
-                      class="title font-weight-light black--text text-center mx-5"
+                      class="
+                        title
+                        font-weight-light
+                        black--text
+                        text-center
+                        mx-5
+                      "
                     >
                       (+91) 7620314834
                     </h1>
@@ -54,14 +66,26 @@
                 <v-col cols="8">
                   <v-row justify="start">
                     <h1
-                      class="title font-weight-light black--text text-center mx-5"
+                      class="
+                        title
+                        font-weight-light
+                        black--text
+                        text-center
+                        mx-5
+                      "
                     >
                       Akshay Kumar
                     </h1>
                   </v-row>
                   <v-row justify="start">
                     <h1
-                      class="title font-weight-light black--text text-center mx-5"
+                      class="
+                        title
+                        font-weight-light
+                        black--text
+                        text-center
+                        mx-5
+                      "
                     >
                       (+91) 8806625112
                     </h1>
@@ -80,14 +104,26 @@
                 <v-col cols="8">
                   <v-row justify="start">
                     <h1
-                      class="title font-weight-light black--text text-center mx-5"
+                      class="
+                        title
+                        font-weight-light
+                        black--text
+                        text-center
+                        mx-5
+                      "
                     >
                       A. M. J. Ramaraju
                     </h1>
                   </v-row>
                   <v-row justify="start">
                     <h1
-                      class="title font-weight-light black--text text-center mx-5"
+                      class="
+                        title
+                        font-weight-light
+                        black--text
+                        text-center
+                        mx-5
+                      "
                     >
                       (+91) 9404708389
                     </h1>
@@ -141,7 +177,15 @@
                 ></v-text-field>
               </v-col> -->
               <v-col cols="12" sm="8">
-                <v-btn large dark color="red" @click="sendMail"> Send</v-btn>
+                <v-btn
+                  large
+                  dark
+                  color="red"
+                  @click="sendMail"
+                  :loading="button_Loader"
+                >
+                  Send</v-btn
+                >
               </v-col>
             </v-col>
           </v-row>
@@ -167,7 +211,7 @@
 <style scoped>
 .contactBG {
   width: 80%;
-  height: 1250px;
+  /* height: 1250px; */
   background: #ffffff;
   box-shadow: 0px 29px 0px -14px #ea2e49, 0px 52px 0px -24px #a9162b,
     0px 0px 50px -1px rgba(82, 82, 82, 0.1);
@@ -182,12 +226,14 @@
 
 <script>
 import emailjs from "emailjs-com";
+import _ from "lodash";
 export default {
   data: () => ({
     name: null,
     number: null,
     email: null,
     message: null,
+    button_Loader: false,
     snackbar: false,
     snackbar_text: "",
     snackbar_color: "success",
@@ -196,7 +242,32 @@ export default {
     emailjs.init("user_de49AgyRcXIpyR1vMeVbF"); //Insert your User ID
   },
   methods: {
-    async sendMail() {
+    sendMail: _.throttle(async function () {
+      if (this.name == null) {
+        this.snackbar_text = "Please enter Name";
+        this.snackbar_color = "error";
+        this.snackbar = true;
+        return;
+      }
+      if (this.number == null) {
+        this.snackbar_text = "Please enter Contact Number";
+        this.snackbar_color = "error";
+        this.snackbar = true;
+        return;
+      }
+      if (this.email == null) {
+        this.snackbar_text = "Please enter Email Address";
+        this.snackbar_color = "error";
+        this.snackbar = true;
+        return;
+      }
+      if (this.message == null) {
+        this.snackbar_text = "Please enter Description";
+        this.snackbar_color = "error";
+        this.snackbar = true;
+        return;
+      }
+      this.button_Loader = true;
       let templateParams = {
         req_name: this.name,
         req_number: this.number,
@@ -211,28 +282,35 @@ export default {
         ); //use your Service ID and Template ID
 
         if (mailResponse.status == 200) {
-          console.log("SUCCESS BUT TRIP")
+          console.log("SUCCESS BUT TRIP");
           console.log("SUCCESS!", mailResponse.status, mailResponse.text);
           this.name = null;
           this.number = null;
           this.email = null;
           this.message = null;
+          this.button_Loader = false;
+
           this.snackbar_text = "Message Sent Successfuly";
           this.snackbar_color = "success";
           this.snackbar = true;
         } else {
           console.log("FAILED...", mailResponse);
-          this.snackbar_text = "Oops!!! Something went Wrong! \n Please Try Again Later!";
+          this.button_Loader = true;
+
+          this.snackbar_text =
+            "Oops!!! Something went Wrong! \n Please Try Again Later!";
           this.snackbar_color = "danger";
           this.snackbar = true;
         }
       } catch (err) {
         console.log("MAIL SERVER FAILED...", err);
+        this.button_Loader = true;
+
         this.snackbar_text = "Oops!!! Our Mail Servers seem down!";
         this.snackbar_color = "danger";
         this.snackbar = true;
       }
-    },
+    }, 5000),
   },
 };
 </script>

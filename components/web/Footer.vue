@@ -53,9 +53,9 @@
           <h1 class="subtitle-1 font-weight-light grey--text text-left mt-13">
             Contact Email
           </h1>
-          <h1 class="subtitle-1 font-weight-light white--text text-left mt-4">
-            sales@cidroy.com
-          </h1>
+          <a class="subtitle-1 font-weight-light white--text text-left mt-4" href="mailto:mail@cidroy.com">
+            mail@cidroy.com
+          </a>
         </v-col>
       </v-row>
       <v-divider dark class="mt-5" />

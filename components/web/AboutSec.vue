@@ -1,5 +1,5 @@
 <template>
-  <section id="about">
+  <section id="about" @mouseover="setHover">
     <v-row justify="center">
       <div class="about mx-5" style="margin-top: 100px">
         <div>
@@ -18,7 +18,8 @@
                   competitive, win new markets & leveraging the full potential
                   of the latest disruptive technologies thereby thriving on the
                   change that is powered by an intelligent connect between
-                  technology and humans. <br/> <br />
+                  technology and humans. <br />
+                  <br />
                   <strong>
                     We are fast in curating, smart in managing & subtle in
                     delivering your precious digital idea.</strong
@@ -26,30 +27,80 @@
                 </h1>
               </v-col>
               <v-row class="mt-15 ml-n7">
-                  <v-col cols="12" sm="3"
-                    ><h2 class="text-center display-1 font-weight-bold my-2 black--text">3 Countries</h2>
-                    <h4 class="text-center headline font-weight-light black--text">
-                      Operating around <br/> the world
-                    </h4></v-col
+                <v-col cols="12" sm="3"
+                  ><h2
+                    class="
+                      text-center
+                      display-1
+                      font-weight-bold
+                      my-2
+                      black--text
+                    "
                   >
-                  <v-col cols="12" sm="3"
-                    ><h2 class="text-center display-1 font-weight-bold my-2 black--text">20+</h2>
-                    <h4 class="text-center headline font-weight-light black--text">
-                      Projects delivered
-                    </h4></v-col
+                    {{ countryCount }} Countries
+                  </h2>
+                  <h4
+                    class="text-center headline font-weight-light black--text"
                   >
-                  <v-col cols="12" sm="3"
-                    ><h2 class="text-center display-1 font-weight-bold my-2 black--text">20+</h2>
-                    <h4 class="text-center headline font-weight-light black--text">
-                      Consultants around <br/> the world
-                    </h4></v-col
+                    Operating around <br />
+                    the world
+                  </h4></v-col
+                >
+                <v-col cols="12" sm="3"
+                  ><h2
+                    class="
+                      text-center
+                      display-1
+                      font-weight-bold
+                      my-2
+                      black--text
+                    "
                   >
-                  <v-col cols="12" sm="3"
-                    ><h2 class="text-center display-1 font-weight-bold my-2 black--text">20+</h2>
-                    <h4 class="text-center headline font-weight-light black--text">
-                      Consultants around <br/> the world
-                    </h4></v-col
+                    {{ projectCount }}+
+                  </h2>
+                  <h4
+                    class="text-center headline font-weight-light black--text"
                   >
+                    Projects delivered
+                  </h4></v-col
+                >
+                <v-col cols="12" sm="3"
+                  ><h2
+                    class="
+                      text-center
+                      display-1
+                      font-weight-bold
+                      my-2
+                      black--text
+                    "
+                  >
+                    {{ consultantCount }}+
+                  </h2>
+                  <h4
+                    class="text-center headline font-weight-light black--text"
+                  >
+                    Consultants around <br />
+                    the world
+                  </h4></v-col
+                >
+                <v-col cols="12" sm="3"
+                  ><h2
+                    class="
+                      text-center
+                      display-1
+                      font-weight-bold
+                      my-2
+                      black--text
+                    "
+                  >
+                    {{ clientCount }}+
+                  </h2>
+                  <h4
+                    class="text-center headline font-weight-light black--text"
+                  >
+                    Active Clients
+                  </h4></v-col
+                >
               </v-row>
             </v-col></v-row
           >
@@ -67,3 +118,54 @@
   height: 700px;
 }
 </style>
+
+
+<script>
+export default {
+  data: () => ({
+    countryCount: 0,
+    projectCount: 0,
+    consultantCount: 0,
+    clientCount: 0,
+    startCount: false,
+  }),
+  mounted: function () {
+    // this.setProjectCount();
+  },
+  methods: {
+    setHover() {
+      if (this.startCount == false) {
+        this.setCountries();
+        this.setProjectCount();
+        this.setConsultant();
+        this.setClient();
+        this.startCount = true;
+      }
+    },
+    setCountries() {
+      this.countryCount = this.countryCount + 1;
+      if (this.countryCount < 3) {
+        setTimeout(this.setCountries, 200);
+      }
+    },
+    setProjectCount() {
+      this.projectCount = this.projectCount + 1;
+      if (this.projectCount < 20) {
+        setTimeout(this.setProjectCount, 120);
+      }
+    },
+    setConsultant() {
+      this.consultantCount = this.consultantCount + 1;
+      if (this.consultantCount < 15) {
+        setTimeout(this.setConsultant, 120);
+      }
+    },
+    setClient() {
+      this.clientCount = this.clientCount + 1;
+      if (this.clientCount < 10) {
+        setTimeout(this.setClient, 120);
+      }
+    },
+  },
+};
+</script>
