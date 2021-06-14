@@ -29,9 +29,9 @@
                     </h1>
                   </v-row>
                   <v-row justify="start">
-                    <h1 class="title font-weight-light black--text text-center">
+                    <a href="tel:+91 9157999875" class="title font-weight-light black--text text-center">
                       (+91) 9157999875
-                    </h1>
+                    </a>
                   </v-row>
                 </v-col>
               </v-row>
@@ -51,9 +51,9 @@
                     </h1>
                   </v-row>
                   <v-row justify="start">
-                    <h1 class="title font-weight-light black--text text-center">
+                    <a href="tel:+91 8806625112" class="title font-weight-light black--text text-center">
                       (+91) 8806625112
-                    </h1>
+                    </a>
                   </v-row>
                 </v-col>
               </v-row>
@@ -73,9 +73,9 @@
                     </h1>
                   </v-row>
                   <v-row justify="start">
-                    <h1 class="title font-weight-light black--text text-center">
+                    <a href="tel:+91 9404708389" class="title font-weight-light black--text text-center">
                       (+91) 9404708389
-                    </h1>
+                    </a>
                   </v-row>
                 </v-col>
               </v-row>

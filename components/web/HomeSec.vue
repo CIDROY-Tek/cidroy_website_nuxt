@@ -127,7 +127,7 @@
 .text_2::after {
   content: "|";
   position: absolute;
-  right: 0;
+  right: -10;
   animation: caret infinite;
   animation-duration: 1s;
   animation-timing-function: steps(1, end);

@@ -65,8 +65,8 @@
         :autoplaySpeed="2000"
       >
         <v-img
-          width="250"
-          height="250"
+          width="150"
+          height="150"
           contain
           class="mx-10"
           v-for="(n, index) in imageList"

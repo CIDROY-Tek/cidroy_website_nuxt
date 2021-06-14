@@ -40,7 +40,7 @@
                     </h1>
                   </v-row>
                   <v-row justify="start">
-                    <h1
+                    <a href="tel:+91 7620314834"
                       class="
                         title
                         font-weight-light
@@ -50,7 +50,7 @@
                       "
                     >
                       (+91) 7620314834
-                    </h1>
+                    </a>
                   </v-row>
                 </v-col>
               </v-row>
@@ -78,7 +78,7 @@
                     </h1>
                   </v-row>
                   <v-row justify="start">
-                    <h1
+                    <a href="tel:+91 8806625112"
                       class="
                         title
                         font-weight-light
@@ -88,7 +88,7 @@
                       "
                     >
                       (+91) 8806625112
-                    </h1>
+                    </a>
                   </v-row>
                 </v-col>
               </v-row>
@@ -116,7 +116,7 @@
                     </h1>
                   </v-row>
                   <v-row justify="start">
-                    <h1
+                    <a href="tel:+91 9404708389"
                       class="
                         title
                         font-weight-light
@@ -126,7 +126,7 @@
                       "
                     >
                       (+91) 9404708389
-                    </h1>
+                    </a>
                   </v-row>
                 </v-col>
               </v-row>

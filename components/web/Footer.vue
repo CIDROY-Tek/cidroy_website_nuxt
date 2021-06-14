@@ -28,49 +28,75 @@
           </h1>
         </v-col>
         <v-col cols="1">
-          <h1 class="subtitle-1 font-weight-light grey--text text-left mt-13">
+          <h1 class="subtitle-1 font-weight-light grey--text text-left mt-13 mb-5">
             Links
           </h1>
-          <h1 class="subtitle-1 font-weight-light white--text text-left mt-10" @click="$vuetify.goTo('#about')">
+          <a
+            class="subtitle-1 font-weight-light white--text text-left"
+            @click="$vuetify.goTo('#about')"
+          >
             About
-          </h1>
-          <h1 class="subtitle-1 font-weight-light white--text text-left mt-4" @click="$vuetify.goTo('#service')">
+          </a>
+        <h1 class="my-5" />
+          <a
+            class="subtitle-1 font-weight-light white--text text-left"
+            @click="$vuetify.goTo('#service')"
+          >
             Service
-          </h1>
+          </a>
         </v-col>
         <v-col cols="3" class="pl-10">
           <h1 class="subtitle-1 font-weight-light grey--text text-left mt-13">
             Social
           </h1>
           <v-row class="mt-10">
-            <v-icon dark class="pa-2">mdi-facebook</v-icon>
-            <v-icon dark class="pa-2">mdi-twitter</v-icon>
-            <v-icon dark class="pa-2">mdi-instagram</v-icon>
-            <v-icon dark class="pa-2">mdi-rss</v-icon>
+            <v-icon
+              dark
+              class="pa-2"
+              @click="goToLinkedIn"
+              >mdi-linkedin</v-icon
+            >
+            <!-- <v-icon dark class="pa-2">mdi-twitter</v-icon> -->
+            <!-- <v-icon dark class="pa-2">mdi-instagram</v-icon> -->
+            <!-- <v-icon dark class="pa-2">mdi-rss</v-icon> -->
           </v-row>
         </v-col>
         <v-col cols="2">
           <h1 class="subtitle-1 font-weight-light grey--text text-left mt-13">
             Contact Email
           </h1>
-          <a class="subtitle-1 font-weight-light white--text text-left mt-4" href="mailto:mail@cidroy.com">
+          <a
+            class="subtitle-1 font-weight-light white--text text-left mt-4"
+            href="mailto:mail@cidroy.com"
+          >
             mail@cidroy.com
           </a>
         </v-col>
       </v-row>
       <v-divider dark class="mt-5" />
       <v-row align="center" justify="center">
-        <v-col cols="6">
+        <v-col cols="12">
           <h1 class="subtitle-1 font-weight-light grey--text text-center mt-3">
             © 2021 Cidroy Technologies LLP. All Rights Reserved
           </h1>
         </v-col>
-        <v-col cols="6">
+        <!-- <v-col cols="6">
           <h1 class="subtitle-1 font-weight-light white--text text-center mt-3">
             Terms of Service
           </h1>
-        </v-col>
+        </v-col> -->
       </v-row>
     </v-col>
   </div>
 </template>
+
+<script>
+import $ from 'jquery'
+export default {
+  methods:{
+    goToLinkedIn(){
+      window.open('https://in.linkedin.com/company/cidroy', '_blank');
+    }
+  }
+}
+</script>

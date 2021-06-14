@@ -25,10 +25,10 @@
           <h1 class="subtitle-1 font-weight-bold grey--text text-left mt-5">
             Links
           </h1>
-          <h1 class="subtitle-1 font-weight-bold white--text text-left mt-2" @click="$vuetify.goTo('#about')">
+          <h1 class="subtitle-1 font-weight-bold white--text text-left mt-2" @click="$vuetify.goTo('#mabout')">
             About
           </h1>
-          <h1 class="subtitle-1 font-weight-bold white--text text-left mt-2" @click="$vuetify.goTo('#service')">
+          <h1 class="subtitle-1 font-weight-bold white--text text-left mt-2" @click="$vuetify.goTo('#mservice')">
             Service
           </h1>
         </v-col>
