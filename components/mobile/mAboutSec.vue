@@ -98,8 +98,7 @@
                   <h4
                     class="text-center headline font-weight-light black--text"
                   >
-                    Consultants around <br />
-                    the world
+                    Active clients
                   </h4></v-col
                 >
               </v-row>
