@@ -3,7 +3,7 @@
     style="
       background-color: #23242a;
       width: 100%;
-      height: 300px;
+      height: 325px;
       margin-top: 200px;
     "
   >
@@ -28,7 +28,9 @@
           </h1>
         </v-col>
         <v-col cols="1">
-          <h1 class="subtitle-1 font-weight-light grey--text text-left mt-13 mb-5">
+          <h1
+            class="subtitle-1 font-weight-light grey--text text-left mt-13 mb-5"
+          >
             Links
           </h1>
           <a
@@ -37,7 +39,7 @@
           >
             About
           </a>
-        <h1 class="my-5" />
+          <h1 class="my-3" />
           <a
             class="subtitle-1 font-weight-light white--text text-left"
             @click="$vuetify.goTo('#service')"
@@ -45,15 +47,12 @@
             Service
           </a>
         </v-col>
-        <v-col cols="3" class="pl-10">
+        <v-col cols="1">
           <h1 class="subtitle-1 font-weight-light grey--text text-left mt-13">
             Social
           </h1>
-          <v-row class="mt-10">
-            <v-icon
-              dark
-              class="pa-2"
-              @click="goToLinkedIn"
+          <v-row class="mt-3">
+            <v-icon dark class="pa-2" @click="goToLinkedIn"
               >mdi-linkedin</v-icon
             >
             <!-- <v-icon dark class="pa-2">mdi-twitter</v-icon> -->
@@ -61,7 +60,7 @@
             <!-- <v-icon dark class="pa-2">mdi-rss</v-icon> -->
           </v-row>
         </v-col>
-        <v-col cols="2">
+        <v-col cols="3">
           <h1 class="subtitle-1 font-weight-light grey--text text-left mt-13">
             Contact Email
           </h1>
@@ -70,6 +69,14 @@
             href="mailto:mail@cidroy.com"
           >
             mail@cidroy.com
+          </a>
+
+          <h1 class="subtitle-1 font-weight-light grey--text text-left mt-5">
+            Office Address
+          </h1>
+          <a class="caption font-weight-light white--text text-left mt-10">
+            S-1, Second floor, Krishnavilla, Surya Nagar Colony, behind MES
+            College, Zuarinagar, Sancoale, Goa 403726
           </a>
         </v-col>
       </v-row>
@@ -91,12 +98,12 @@
 </template>
 
 <script>
-import $ from 'jquery'
+import $ from "jquery";
 export default {
-  methods:{
-    goToLinkedIn(){
-      window.open('https://in.linkedin.com/company/cidroy', '_blank');
-    }
-  }
-}
+  methods: {
+    goToLinkedIn() {
+      window.open("https://in.linkedin.com/company/cidroy", "_blank");
+    },
+  },
+};
 </script>

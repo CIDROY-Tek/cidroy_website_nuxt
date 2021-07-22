@@ -11,11 +11,11 @@
             </h1>
             <h1 class="subtitle-1 font-weight-light grey--text text-left mt-5">
               Cidroy was founded in the year 2017. The company was built on a
-            belief that not only we will solve other people's problem but also
-            introduce state of the art tech and management solutions to
-            revolutionalize their own business. It all started when we decided
-            to solve technical and management related problems in the community,
-            ranging from small scale startups to giant companies.
+              belief that not only we will solve other people's problem but also
+              introduce state of the art tech and management solutions to
+              revolutionalize their own business. It all started when we decided
+              to solve technical and management related problems in the
+              community, ranging from small scale startups to giant companies.
             </h1>
           </v-row>
         </v-col>
@@ -25,10 +25,16 @@
           <h1 class="subtitle-1 font-weight-bold grey--text text-left mt-5">
             Links
           </h1>
-          <h1 class="subtitle-1 font-weight-bold white--text text-left mt-2" @click="$vuetify.goTo('#mabout')">
+          <h1
+            class="subtitle-1 font-weight-bold white--text text-left mt-2"
+            @click="$vuetify.goTo('#mabout')"
+          >
             About
           </h1>
-          <h1 class="subtitle-1 font-weight-bold white--text text-left mt-2" @click="$vuetify.goTo('#mservice')">
+          <h1
+            class="subtitle-1 font-weight-bold white--text text-left mt-2"
+            @click="$vuetify.goTo('#mservice')"
+          >
             Service
           </h1>
         </v-col>
@@ -36,21 +42,24 @@
           <h1 class="subtitle-1 font-weight-bold grey--text text-left mt-5">
             Contact Email
           </h1>
-          <a class="subtitle-1 font-weight-bold white--text text-left mt-2" href="mailto:mail@cidroy.com">
+          <a
+            class="subtitle-1 font-weight-bold white--text text-left mt-2"
+            href="mailto:mail@cidroy.com"
+          >
             mail@cidroy.com
           </a>
         </v-col>
       </v-row>
       <v-row class="px-3">
         <v-col cols="12">
-          <h1 class="subtitle-1 font-weight-bold grey--text text-left mt-5">
-            Social
+          <h1 class="subtitle-1 font-weight-bold grey--text text-left mt-3">
+            Address
           </h1>
           <v-row class="mt-2" justify="start">
-            <v-icon dark class="py-2 px-5">mdi-facebook</v-icon>
-            <v-icon dark class="py-2 px-5">mdi-twitter</v-icon>
-            <v-icon dark class="py-2 px-5">mdi-instagram</v-icon>
-            <v-icon dark class="py-2 px-5">mdi-rss</v-icon>
+            <a class="caption font-weight-light white--text text-left px-3">
+              S-1, Second floor, Krishnavilla, Surya Nagar Colony, behind MES
+              College, Zuarinagar, Sancoale, Goa 403726
+            </a>
           </v-row>
         </v-col>
       </v-row>
