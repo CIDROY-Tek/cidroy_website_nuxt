@@ -52,6 +52,17 @@
         </template>
       </v-slide-group> -->
     </v-row>
+
+
+
+
+
+
+
+
+
+
+<!-- 
     <div class="sepLine my-5" />
     <div>
       <VueSlickCarousel
@@ -75,7 +86,33 @@
         />
       </VueSlickCarousel>
     </div>
-    <div class="sepLine my-5" />
+    <div class="sepLine my-5" /> -->
+
+
+
+
+
+    <h3
+        class="display-1 font-weight-bold text-center black--text px-5"
+        style="margin-top: 20px; margin-bottom: 50px"
+      >
+        Our Clients
+      </h3>
+      <div class="sepLine my-5" />
+      <v-row class="align-center mx-3 mt-5 px-5">
+        <v-col
+          cols="6"
+          v-for="(n, index) in imageList_new"
+          :key="`n-${index}`"
+          :src="n.link"
+        >
+          <v-img width="100" height="100" contain :src="n.link" />
+        </v-col>
+      </v-row>
+      <div class="sepLine my-5" />
+
+
+
   </section>
 </template>
 <style scoped>
@@ -107,6 +144,23 @@ export default {
       { link: "/client_logo_6.png" },
       { link: "/client_logo_8.png" },
       { link: "/client_logo_9.png" },
+    ],
+    imageList_new: [
+      { link: "/new_logos/Logo_New_15.png" },
+      { link: "/new_logos/Logo_New_13.png" },
+      { link: "/new_logos/Logo_New_2.png" },
+      { link: "/new_logos/Logo_New_14.png" },
+      // { link: "/new_logos/Logo_New_3.tif" }, MRD
+      { link: "/new_logos/Logo_New_10.png" },
+      { link: "/new_logos/Logo_New_8.png" },
+      { link: "/new_logos/Logo_New_12.png" },
+      { link: "/new_logos/Logo_New_1.jpeg" },
+      { link: "/new_logos/Logo_New_4.png" },
+      { link: "/new_logos/Logo_New_5.png" },
+      { link: "/new_logos/Logo_New_6.png" },
+      { link: "/new_logos/Logo_New_7.png" },
+      { link: "/new_logos/Logo_New_9.png" },
+      { link: "/new_logos/Logo_New_11.png" },
     ],
     servicesList: [
       {

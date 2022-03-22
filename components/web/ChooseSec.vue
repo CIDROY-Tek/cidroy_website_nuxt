@@ -76,7 +76,7 @@
 .chooseBg {
   background-color: #1c344c;
   width: 100%;
-  height: 1500px;
+  height: 1750px;
   z-index: 0;
   position: absolute;
   top: 4000px;

@@ -113,7 +113,7 @@
 <style scoped>
 .about {
   background-image: url("/aboutBG.png");
-  background-size: contain;
+  background-size: cover;
   width: 80%;
   height: 700px;
 }

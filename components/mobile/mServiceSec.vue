@@ -83,8 +83,9 @@
           v-for="(n, index) in imageList"
           :key="`n-${index}`"
           :src="n.link"
+          align="center"
         >
-          <v-img width="100" height="100" contain :src="n.link" />
+          <v-img width="75" height="75" contain :src="n.link" />
         </v-col>
       </v-row>
       <div class="sepLine my-5" />
