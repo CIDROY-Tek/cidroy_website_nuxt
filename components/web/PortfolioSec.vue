@@ -82,7 +82,7 @@
       <v-col cols="12" align="center">
         <h3
           class="display-2 font-weight-bold black--text px-5"
-          style="margin-top: 200px"
+          style="margin-top: 300px"
         >
           Our Clients
         </h3></v-col
