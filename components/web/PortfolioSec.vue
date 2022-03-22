@@ -143,6 +143,7 @@ export default {
       { link: "/new_logos/Logo_New_8.png" },
       { link: "/new_logos/Logo_New_12.png" },
       { link: "/new_logos/Logo_New_1.jpeg" },
+      { link: "/new_logos/Logo_New_16.png" },
       { link: "/new_logos/Logo_New_4.png" },
       { link: "/new_logos/Logo_New_5.png" },
       { link: "/new_logos/Logo_New_6.png" },
