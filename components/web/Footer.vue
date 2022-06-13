@@ -75,8 +75,8 @@
             Office Address
           </h1>
           <a class="caption font-weight-light white--text text-left mt-10">
-            S-1, Second floor, Krishnavilla, Surya Nagar Colony, behind MES
-            College, Zuarinagar, Sancoale, Goa 403726
+            Cubicle No. 24, The Fatorda Salesian Society, Don Bosco Fatorda,
+            Margao, South Goa - 403602, INDIA
           </a>
         </v-col>
       </v-row>

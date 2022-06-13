@@ -57,8 +57,8 @@
           </h1>
           <v-row class="mt-2" justify="start">
             <a class="caption font-weight-light white--text text-left px-3">
-              S-1, Second floor, Krishnavilla, Surya Nagar Colony, behind MES
-              College, Zuarinagar, Sancoale, Goa 403726
+              Cubicle No. 24, The Fatorda Salesian Society, Don Bosco Fatorda,
+              Margao, South Goa - 403602, INDIA
             </a>
           </v-row>
         </v-col>
