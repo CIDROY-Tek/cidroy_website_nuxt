@@ -2,7 +2,9 @@
   <div>
     <div v-if="!showLoader">
       <Home />
-      <Service style="margin-bottom: 100px" />
+      <Service  />
+      <TestimonialSec />
+      <DigitalAgencies/>
       <About />
       <Choose />
       <Portfolio />
@@ -25,6 +27,8 @@ import Portfolio from "~/components/web/PortfolioSec.vue";
 import Contact from "~/components/web/ContactUsSec.vue";
 import Footer from "~/components/web/Footer.vue";
 import Loader from "../../components/Loader.vue";
+import TestimonialSec from '../../components/web/TestimonialSec.vue';
+import DigitalAgencies from "../../components/web/digitalAgencies.vue";
 export default {
   middleware: "switch",
 
@@ -37,7 +41,9 @@ export default {
     Contact,
     Footer,
     Loader,
-  },
+    TestimonialSec,
+    DigitalAgencies
+},
   data: () => ({
     showLoader: true,
   }),

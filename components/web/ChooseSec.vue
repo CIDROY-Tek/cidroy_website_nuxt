@@ -1,20 +1,22 @@
 <template>
   <section id="choose">
-    <div class="chooseBg"></div>
+    <div class="chooseBg" style="margin-top: 700px;">
+      
+    </div>
     <div>
-      <v-row style="margin-top: 250px">
+      <v-row style="margin-top: ">
         <v-col sm="2" class="d-none d-sm-flex"></v-col>
         <v-col cols="10">
-          <h1 class="display-3 font-weight-bold my-8 black--text">
+          <h1 class="display-3 font-weight-bold  black--text" style="margin-top: -5vh;">
             Why choose us?
           </h1>
           <v-row class="mt-5">
-            <v-col cols="4"
-              ><v-img src="/choose_1.png" style="margin-top: 100px"
-            /></v-col>
-            <v-col cols="6" justify="space-between">
-              <v-col class="pl-15">
-                <h1 class="display-1 font-weight-bold my-6 black--text">
+            <v-col cols="4">
+              <v-img src="/choose_1.png" style="margin-top: 30vh"/>
+            </v-col>
+            <v-col cols="6" justify="space-between" style="z-index: 10">
+              <v-col class="pl-15" style="margin-top: -5vh;">
+                <h1 class="display-1 font-weight-bold my-9 black--text">
                   The Proof of Concept
                 </h1>
                 <h3 class="font-weight-light black--text my-5">
@@ -25,11 +27,11 @@
                   to pay if you are choosing us to develop the product.
                 </h3>
               </v-col>
-              <v-img src="/choose_2.png" style="margin-top: 100px"
-            /></v-col>
+              <v-img src="/choose_2.png" style="margin-top: 50px"/>
+            </v-col>
           </v-row>
 
-          <v-row class="mt-10" align="center">
+          <v-row class="mt-10" align="center"  style="margin-top: 80px">
             <v-col cols="5">
               <v-img src="/choose_4.png" />
             </v-col>
@@ -48,7 +50,7 @@
             </v-col>
           </v-row>
 
-          <v-row class="mt-10" align="center">
+          <v-row class="" align="center">
             <v-col cols="5" style="z-index: 10">
               <h3 class="display-1 font-weight-bold white--text my-10">
                 The best design for your business
@@ -62,7 +64,7 @@
               </h3>
             </v-col>
             <v-col cols="5">
-              <v-img src="/choose_3.png" />
+              <v-img src="/choose_3.png" style="margin-top: 10vh;" />
             </v-col>
           </v-row>
         </v-col>
@@ -76,7 +78,7 @@
 .chooseBg {
   background-color: #1c344c;
   width: 100%;
-  height: 1700px;
+  height: 1390px;
   z-index: 0;
   position: absolute;
   top: 4000px;

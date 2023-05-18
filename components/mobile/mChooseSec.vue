@@ -1,19 +1,19 @@
 <template>
-  <section id="mchoose">
-    <div class="chooseBg"></div>
+  <section id="mchoose" style="margin-top: 100px; margin-bottom: 50px;">
+    <div class="chooseBg" style="margin-top: 700px;"></div>
     <div>
-      <v-row style="margin-top: 1100px">
+      <v-row style="margin-top: 900px">
         <v-col cols="1" />
         <v-col cols="10">
-          <v-row justify="center" align="center">
-            <h1 class="display-2 font-weight-bold black--text">
+          <v-row align="left">
+            <h1 class="display-1 font-weight-bold black--text">
               Why choose us?
             </h1>
           </v-row>
-          <v-row justify="center" align="center">
-            <h1 class="display-1 font-weight-bold my-15 black--text">
+          <v-row  align="left">
+            <h2 class="heading font-weight-bold mt-5 black--text">
               The Proof of Concept
-            </h1></v-row
+            </h2></v-row
           >
           <v-row justify="center" align="center">
             <h3 class="font-weight-light black--text my-5">
@@ -24,7 +24,7 @@
               you are choosing us to develop the product.
             </h3></v-row
           >
-          <v-row justify="start" class="mt-15">
+          <v-row justify="start" class="">
             <v-img src="/choose_1.png" max-width="250"
           /></v-row>
           <v-row justify="center" align="center" class="mt-10">
@@ -90,7 +90,7 @@
 .chooseBg {
   background-color: #1c344c;
   width: 100%;
-  height: 2000px;
+  height: 2100px;
   z-index: 0;
   position: absolute;
   top: 5400px;

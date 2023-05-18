@@ -14,7 +14,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/cid_logo.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' },
+      { rel: 'stylesheet', href: 'https://assets.calendly.com/assets/external/widget.css' },//popup attach to button "GET IN TOUCH"
+    ],
+    script:[
+      {src:"https://assets.calendly.com/assets/external/widget.js", async: true}//popup attach to button "GET IN TOUCH"
     ]
   },
 

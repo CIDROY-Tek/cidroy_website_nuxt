@@ -1,7 +1,7 @@
 <template>
   <section id="about" @mouseover="setHover">
     <v-row justify="center">
-      <div class="about mx-5" style="margin-top: 100px">
+      <div class="about mx-5" style="margin-top: 100px; margin-bottom: 100px;">
         <div>
           <v-row>
             <v-col cols="1" class="d-none d-sm-flex"></v-col>

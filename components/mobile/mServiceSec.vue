@@ -14,19 +14,17 @@
           v-for="(n, index) in servicesList"
           :key="`n-${index}`"
         >
-          <v-hover v-slot="{ hover }">
             <v-card
               class="ma-5"
               rounded
               elevation="2"
               width="275px"
               height="250px"
-              :color="hover ? '#1C344C' : 'white'"
+              color='white'
               style="box-shadow: 10px 10px 50px 3px rgba(39, 92, 141, 0.1);"
             >
               <v-card-title
-                class="justify-center"
-                :class="hover ? 'white--text' : 'black--text'"
+                class="justify-center black--text"
                 v-html="n.header"
               >
               </v-card-title>
@@ -37,14 +35,25 @@
                     contain
                     width="75"
                     height="75"
-                    :src="hover ? n.img_d : n.img_w" /></v-col
+                    :src=" n.img_w" />
+                    </v-col
               ></v-row>
             </v-card>
-          </v-hover>
         </v-slide-item>
-
         <template v-slot:prev="{ on, attrs }">
+          <v-avatar  
+            v-bind="attrs"
+            v-on="on"
+            @click="setIcon_Prev"
+            style="position: absolute; top: 325px; left: 75px" size="36">
+            <v-icon :color="current_Card == 0 ? 'grey' : 'red'">mdi-arrow-left</v-icon>
+          </v-avatar>
+        </template>
+
+        <!-- <template v-slot:prev="{ on, attrs }">
+         
           <v-btn
+          text
             fab
             icon
             :color="current_Card == 0 ? 'grey' : 'red'"
@@ -55,9 +64,9 @@
           >
             <v-icon>mdi-arrow-left</v-icon></v-btn
           >
-        </template>
+        </template> -->
         <template v-slot:next="{ on, attrs }">
-          <v-btn
+          <!-- <v-btn
             fab
             icon
             :color="current_Card == 2 ? 'grey' : 'red'"
@@ -66,8 +75,15 @@
             @click="setIcon_Next"
             style="position: absolute; top: 325px; left: 150px"
           >
-            <v-icon>mdi-arrow-right</v-icon></v-btn
-          >
+            <v-icon>mdi-arrow-right</v-icon>
+          </v-btn> -->
+          <v-avatar 
+            v-bind="attrs"
+            v-on="on"
+            @click="setIcon_Next"
+            style="position: absolute; top: 325px; left: 150px" size="36">
+            <v-icon  :disabled="current_Card == 2 "  :color="current_Card == 2 ? 'grey' : 'red'">mdi-arrow-right</v-icon>
+          </v-avatar>
         </template>
       </v-slide-group>
       <h3
@@ -85,7 +101,8 @@
           :src="n.link"
           align="center"
         >
-          <v-img width="75" height="75" contain :src="n.link" />
+          <v-img width="75" height="75" contain :src="n.link" ></v-img>
+          <p class="black--text font-weight-bold">{{ n.name }}</p>
         </v-col>
       </v-row>
       <div class="sepLine my-5" />
@@ -98,52 +115,43 @@ export default {
     model: null,
     current_Card: 0,
     imageList: [
-      { link: "/stack_1.png" },
-      { link: "/stack_2.jpg" },
-      { link: "/stack_3.png" },
-      { link: "/stack_4.png" },
-      { link: "/stack_5.png" },
-      { link: "/stack_6.svg" },
-      { link: "/stack_7.svg" },
-      { link: "/stack_8.svg" },
-      { link: "/stack_9.svg" },
-      { link: "/stack_10.svg" },
-      { link: "/stack_11.png" },
-      { link: "/stack_12.png" },
-      { link: "/stack_13.jpg" },
-      { link: "/stack_14.png" },
-      { link: "/stack_15.png" },
-      { link: "/stack_16.png" },
-      { link: "/stack_17.png" },
-      { link: "/stack_18.png" },
-      { link: "/stack_19.png" },
-      { link: "/stack_20.png" },
-      { link: "/stack_21.png" },
-      { link: "/stack_23.png" },
-      { link: "/stack_24.png" },
+    { link: "/stack_1.png", name: 'Nuxt.js' },
+    { link: "/stack_2.jpg", name: 'Adonis.js' },
+    { link: "/stack_3.png", name: 'MongoDB' },
+    { link: "/stack_4.png", name: 'TypeScript' },
+    { link: "/stack_5.png", name: 'Vue.js' },
+    { link: "/stack_8.svg", name: 'Node.js' },
+    { link: "/stack_9.svg", name: 'React.js'  },
+    { link: "/stack_10.svg", name: 'Flutter' },
+    { link: "/stack_12.png", name: 'Cypress' },
+    { link: "/stack_14.png", name: 'NGINIX' },
+    { link: "/stack_17.png", name: 'Jest' },
+    { link: "/stack_19.png", name: 'AWS' },
+    { link: "/stack_20.png", name: 'FireBase' },
+    { link: "/stack_21.png", name: 'MySQL' },
     ],
     servicesList: [
-      {
-        header: "Design Innovation",
-        img_d: "/web-designw.png",
+    {
+        header: "Architectural designing",
+        // img_d: "/web-designw.png",
         img_w: "/web-design.png",
       },
       {
-        header: "Application development, Re-Engineering & <br/> Maintenance",
-        img_d: "/dataw.png",
-        img_w: "/data.png",
+        header: "Mobile and Web App Dev",
+        // img_d: "/dataw.png",
+        img_w: "/cloud-computing.png",
       },
       {
-        header: "Power your cloud",
-        img_d: "/cloud-computingw.png",
-        img_w: "/cloud-computing.png",
+        header: "Hire from top 1% talent",
+        // img_d: "/cloud-computingw.png",
+        img_w: "/data.png",
       },
     ],
   }),
   methods: {
     setIcon_Next() {
       // this.current_Card = this.cycle[this.current_Card]
-
+console.log('=============>next',this.current_Card)
       switch (this.current_Card) {
         case 0:
           this.current_Card = 1;
@@ -154,18 +162,22 @@ export default {
           break;
 
         case 2:
-          this.current_Card = 0;
-          break;
+          // this.current_Card = 0;
+          return
+          // break;
 
         default:
           break;
       }
     },
     setIcon_Prev() {
+console.log('=============>prev',this.current_Card)
+
       switch (this.current_Card) {
         case 0:
-          this.current_Card = 2;
-          break;
+          // this.current_Card = 2;
+          return
+          // break;
 
         case 1:
           this.current_Card = 0;

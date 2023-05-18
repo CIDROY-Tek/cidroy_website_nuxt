@@ -39,7 +39,7 @@
       >
         Contact
       </v-btn>
-      <v-btn color="#EA2E49" class="text-capitalize mt-2"  @click="$vuetify.goTo('#contact')" > Get in Touch </v-btn>
+      <v-btn color="#EA2E49" class="text-capitalize mt-2"   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cidroytech/30min?primary_color=ea2e49'});return false;" > Get in Touch </v-btn>
     </v-app-bar>
     <!-- ------------------------ HOME PAGE ------------------------ -->
     <section id="hero">
@@ -63,15 +63,19 @@
                   Solutions for your <br />
                   business
                 </h1> -->
+                
                 <v-btn
                   large
                   dark
-                  @click="$vuetify.goTo('#contact')"
+                  onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cidroytech/30min?primary_color=ea2e49'});return false;"
                   class="mt-5 red--text"
                   color="white"
                 >
                   Get In Touch
                 </v-btn>
+            
+               
+
               </v-col>
               <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down">
               </v-col>

@@ -3,6 +3,8 @@
     <div v-if="!showLoader">
       <Home />
       <Service style="margin-bottom: 100px" />
+      <TestimonialSec/>
+      <MdigitalAgencies/>
       <About />
       <Choose />
       <Portfolio />
@@ -25,6 +27,8 @@ import Portfolio from "~/components/mobile/mPortfolioSec.vue";
 import Contact from "~/components/mobile/mContactUsSec.vue";
 import Footer from "~/components/mobile/mFooter.vue";
 import Loader from "../../components/Loader.vue";
+import TestimonialSec from "../../components/mobile/mTestimonialSec.vue";
+import MdigitalAgencies from '../../components/mobile/mdigitalAgencies.vue';
 export default {
   middleware: "switch",
   components: {
@@ -36,7 +40,9 @@ export default {
     Contact,
     Footer,
     Loader,
-  },
+    TestimonialSec,
+    MdigitalAgencies
+},
   data: () => ({
     showLoader: true,
   }),

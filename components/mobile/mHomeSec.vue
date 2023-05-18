@@ -56,7 +56,7 @@
           <v-btn
             large
             dark
-            @click="$vuetify.goTo('#mcontact')"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cidroytech/30min?primary_color=ea2e49'});return false;"
             class="mt-2 red--text"
             color="white"
           >
