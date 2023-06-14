@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid>
+    <v-container fluid style="margin-top: 50px;">
         <v-card color="#23242A" class="pa-2" width="100%" height="auto">
             <v-row align="center">
                 <v-col cols="1"></v-col>

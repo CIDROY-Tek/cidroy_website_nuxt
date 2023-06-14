@@ -2,7 +2,7 @@
     <section id="mtestimonial">
         <v-row align="center">
             <v-col cols="12" align="center">
-                <h1 class="display-1 font-weight-bold black--text px-5" style="margin-top: 200px">
+                <h1 class="display-1 font-weight-bold black--text px-5" style="margin-top: 50px">
                     Trusted by Agencies
                     & Business Owners
                 </h1>
@@ -10,8 +10,7 @@
             <v-col cols="12" align="center">
                 <v-carousel v-model="carousel" hide-delimiter-background class="pa-2" active-class="success"
                     :show-arrows="false" height="90vh">
-
-                    <v-carousel-item v-for="item in testimonialCard" :key="item" >
+                    <v-carousel-item v-for="item in testimonialCard" :key="item.company" >
                         <v-card class="" style="box-shadow: 7.05009px 7.05009px 35.2505px 2.11503px rgba(39, 92, 141, 0.1);
 border-radius: 8.46011px;" color="#FFFFFF" width="100%" height="auto">
                             <v-container>
@@ -23,23 +22,16 @@ border-radius: 8.46011px;" color="#FFFFFF" width="100%" height="auto">
                                         <h1 class=" font-weight-regular black--text px-4">
                                             {{ item.name }}
                                         </h1>
-                                        <!-- <h1 class="font-weight-light black--text"></h1> -->
                                         <h1 class="subtitle-1 font-weight-light red--text">{{ item.company }}</h1>
                                         <h3 class="headline font-weight-light black--text text-justify">
                                             {{ item.description }}
                                         </h3>
                                     </v-col>
-                                    <v-col align="left" cols="12">
-                                    </v-col>
                                 </v-row>
                             </v-container>
                         </v-card>
                     </v-carousel-item>
-
                 </v-carousel>
-                <v-row align="center">
-
-                </v-row>
             </v-col>
         </v-row>
     </section>
@@ -53,26 +45,6 @@ export default {
                 name: 'Testimonial 1',
                 company: 'Calytics global Pvt Ltd',
                 description: 'Being a startup we were very skeptical on outsourcing our tech development, But Cidroy blended in our startup culture and made sure tech was on point and in align with our market development and it makes sense for us compared to building a ground up team.'
-            },
-            {
-                name: 'Name',
-                company: 'CEO Company',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat,viverra magna risus aliquam massa.Ac aliquam ac volutpat, viverra magna risus.'
-            },
-            {
-                name: 'Name',
-                company: 'CEO Company',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat,viverra magna risus aliquam massa.Ac aliquam ac volutpat, viverra magna risus.'
-            },
-            {
-                name: 'Name',
-                company: 'CEO Company',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat,viverra magna risus aliquam massa.Ac aliquam ac volutpat, viverra magna risus.'
-            },
-            {
-                name: 'Name',
-                company: 'CEO Company',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat,viverra magna risus aliquam massa.Ac aliquam ac volutpat, viverra magna risus.'
             },
         ]
 

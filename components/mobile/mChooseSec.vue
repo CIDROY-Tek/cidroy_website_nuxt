@@ -5,12 +5,12 @@
       <v-row style="margin-top: 900px">
         <v-col cols="1" />
         <v-col cols="10">
-          <v-row align="left">
+          <v-row align="start">
             <h1 class="display-1 font-weight-bold black--text">
               Why choose us?
             </h1>
           </v-row>
-          <v-row  align="left">
+          <v-row  align="start">
             <h2 class="heading font-weight-bold mt-5 black--text">
               The Proof of Concept
             </h2></v-row
